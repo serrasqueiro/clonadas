@@ -14,7 +14,7 @@ class GistPage():
     """ GistPage -- main purpose is to fetch GIST description within an HTML page
     """
     _candidates = []
-    _html, _soupe = None, None
+    _html, _soup = None, None
 
     def __init__(self, data:str=""):
         """ Initializer: data should be HTML
