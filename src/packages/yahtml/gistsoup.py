@@ -25,7 +25,7 @@ class GistPage():
         self._candidates = self._init_candidates(data)
 
 
-    def gist_description(self) -> str:
+    def gist_description(self, pre="") -> str:
         """ Returns the GIST description string
         """
         #	wget https://gist.github.com/serrasqueiro/4537fea8688ee2712171dd71c5684079
@@ -37,7 +37,29 @@ class GistPage():
         desc = self._candidates
         if not desc:
             return ""
-        return "|".join(desc)
+        return pre + "|".join(desc)
+
+
+    def github_description(self, pre:str="~") -> str:
+        """ Returns GITHUB repository description string
+        """
+        if self._candidates:
+            return self.gist_description()
+        assert self._soup
+        parsed = self._soup
+        self._candidates = self._init_github_desc(parsed.find("p"))
+        desc = self._candidates
+        if not desc:
+            return ""
+        return pre + "|".join(desc)
+
+
+    def _init_github_desc(self, items):
+        if len(items) != 1:
+            return []
+        # items.attrs = {'class': ['f4', 'mb-3']}
+        candidates = [astr.strip() for astr in items.contents]
+        return candidates
 
 
     def _init_candidates(self, data:str) -> list:

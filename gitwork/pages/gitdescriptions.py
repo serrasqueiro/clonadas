@@ -22,6 +22,7 @@ def main():
 
 Commands are:
    gist        Show gist description of HTML file
+   gith        Show github description of HTML file
 """)
     sys.exit(code if code else 0)
 
@@ -33,7 +34,7 @@ def main_run(out, err, args:list):
     if not args:
         return None
     cmd, param = args[0], args[1:]
-    if cmd in ("gist",):
+    if cmd in ("gist", "gith",):
         code = dump_gist(param, opts, cmd == "gist")
         return code
     return code
@@ -55,7 +56,10 @@ def dump_gist(param, opts, is_gist:bool) -> int:
 
 def html_unbone(data:str, is_gist:bool):
     lax = yahtml.gistsoup.GistPage(data)
-    desc = lax.gist_description()
+    if is_gist:
+        desc = lax.gist_description()
+    else:
+        desc = lax.github_description()
     what = {
         "bones": lax,
         "description": desc,
