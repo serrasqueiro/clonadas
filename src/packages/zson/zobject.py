@@ -29,6 +29,36 @@ class ZObject():
         assert not as_table, "ToDo"
         return self._table
 
+    def get_one(self, name:str):
+        """ If name matches exactly one key, returns it.
+        If name matches multiple keys, returns None.
+        If name does not match anything, returns an empty list.
+        """
+        _, result = self.get_one_key(name)
+        return result
+
+    def get_one_key(self, name:str) -> tuple:
+        """ If name matches exactly one key, returns it.
+        If name matches multiple keys, returns None.
+        If name does not match anything, returns an empty list.
+        """
+        res = self._table.get(name)
+        if res is not None:
+            return name, res
+        matched = []
+        if not isinstance(self._table, dict):
+            return None, matched
+        for key in self._table:
+            if "=" in key and name == key.split("=", maxsplit=1)[0]:
+                return key, self._table[key]
+            if key.startswith(name):
+                matched.append((key, self._table[key]))
+        if len(matched) > 1:
+            return name, None		# Multiple matches!
+        if not matched:
+            return "", []
+        return key, matched[0][1]
+
     def dumps(self, data, key:str="data") -> str:
         """ Dumps JSON object """
         content = data if isinstance(data, dict) else self._data_key(data, key)
