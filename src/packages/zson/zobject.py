@@ -35,9 +35,9 @@ class ZObject():
         astr = self._dump_json_string(content)
         return astr
 
-    def _dump_json_string(self, data) -> str:
+    def _dump_json_string(self, data, ensure_ascii=True) -> str:
         """ Returns JSON string from dictionary or list. """
-        astr = json.dumps(data, indent=2, sort_keys=True)
+        astr = json.dumps(data, indent=2, sort_keys=True, ensure_ascii=ensure_ascii)
         return astr
 
     def _data_key(self, obj:list, key:str) -> dict:
