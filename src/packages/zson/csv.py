@@ -29,6 +29,17 @@ class CSV(ZObject):
             return []
         return self._to_row(astr.split(self._split))
 
+    def convert(self, obj) -> bool:
+        """ Converts from another object """
+        try:
+            cont = obj.get()
+        except AttributeError:
+            cont = None
+        if not cont:
+            return self._from_object(obj)
+        self._table = cont
+        return True
+
     def load(self, path:str, header:str="a") -> bool:
         """ Loads content from file, at 'path'. """
         self._table = []
@@ -104,15 +115,34 @@ class CSV(ZObject):
 
     def _to_csv(self) -> str:
         """ Returns the csv string for the content. """
-        astr = self._header_string + "\n"
+        astr = self._header_string
+        if astr:
+            astr += "\n"
         return astr + self._csv_payload()
 
     def _csv_payload(self) -> str:
         astr = ""
         for line in self._table:
-            row = self._split.join(self._from_row(line))
+            if isinstance(line, (list, tuple)):
+                entry = line
+            elif isinstance(line, dict):
+                entry = [line[key] for key in sorted(line)]
+            else:
+                entry = [line]
+            row = self._split.join(self._from_row(entry))
             astr += row + "\n"
         return astr
+
+    def _from_object(self, obj) -> bool:
+        """ Converts from object. """
+        self._header_string = ""
+        if isinstance(obj, (list, tuple)):
+            self._table = obj
+            return True
+        if isinstance(obj, str):
+            self._header_string = obj
+            return True
+        return False
 
     def __str__(self) -> str:
         return self._csv_payload()
