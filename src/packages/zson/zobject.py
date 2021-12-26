@@ -70,9 +70,10 @@ class ZObject():
         astr = json.dumps(data, indent=2, sort_keys=True, ensure_ascii=ensure_ascii)
         return astr
 
-    def _data_key(self, obj:list, key:str) -> dict:
+    def _data_key(self, obj, key:str) -> dict:
         """ Returns dictionary from list """
-        isinstance(obj, list)
+        if obj is None:
+            return { key: None }
         return {
             key: obj,
         }

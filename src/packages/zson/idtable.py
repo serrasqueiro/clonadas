@@ -25,6 +25,10 @@ class IdTable(ZObject):
         assert isinstance(self._table, (list, dict))
         self._index = ZIndex("utf-8")
 
+    def inject(self, obj):
+        self._index = ZIndex("utf-8")
+        self._table = obj
+
     def load(self, path:str) -> bool:
         """ Load json content from file. """
         self._table = []

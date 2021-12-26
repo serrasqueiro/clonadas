@@ -27,7 +27,7 @@ class ZIndex(ZObject):
         adict = {}
         for item in data:
             a_id = item.get(KEY_ID_STR)
-            if not a_id:
+            if a_id < -1:
                 return False
             adict[a_id] = item
         self.by_key[key] = adict
