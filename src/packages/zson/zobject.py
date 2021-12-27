@@ -61,7 +61,12 @@ class ZObject():
 
     def dumps(self, data, key:str="data") -> str:
         """ Dumps JSON object """
-        content = data if isinstance(data, dict) else self._data_key(data, key)
+        try:
+            content = data
+        except AttributeError:
+            content = None
+        if content is None:
+            content = data if isinstance(data, dict) else self._data_key(data, key)
         astr = self._dump_json_string(content)
         return astr
 
