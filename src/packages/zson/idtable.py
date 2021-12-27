@@ -7,6 +7,7 @@ json-based table
 
 # pylint: disable=missing-function-docstring
 
+import os
 import json
 from zson.zobject import ZObject
 from zson.zindex import ZIndex
@@ -44,8 +45,7 @@ class IdTable(ZObject):
         astr = self._dump_json_string(self._table, ensure_ascii=ensure_ascii)
         astr += "\n"
         try:
-            with open(path, "w", encoding=self._encoding) as fdout:
-                fdout.write(astr)
+            self._write_content(path, astr)
         except FileNotFoundError:
             return False
         return True
@@ -78,6 +78,15 @@ class IdTable(ZObject):
         """ Read table from data string. """
         inp = json.loads(data)
         self._table = inp
+        return True
+
+    def _write_content(self, path:str, astr:str) -> bool:
+        if os.name == "nt":
+            with open(path, "wb") as fdout:
+                fdout.write(astr.encode(self._encoding))
+            return True
+        with open(path, "w", encoding=self._encoding) as fdout:
+            fdout.write(astr)
         return True
 
 

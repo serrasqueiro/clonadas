@@ -14,10 +14,12 @@ class ZObject():
     """ JSON related operations
     """
     _table = None
+    _do_sort = True
 
     def __init__(self, info, encoding:str):
         self._table = [] if info is None else info
         self._encoding = encoding
+        self._do_sort = True
 
     def encoding(self) -> str:
         """ Returns input/ output encoding """
@@ -65,9 +67,12 @@ class ZObject():
         astr = self._dump_json_string(content)
         return astr
 
+    def dump_sort(self, sort_keys:bool):
+        self._do_sort = sort_keys
+
     def _dump_json_string(self, data, ensure_ascii=True) -> str:
         """ Returns JSON string from dictionary or list. """
-        astr = json.dumps(data, indent=2, sort_keys=True, ensure_ascii=ensure_ascii)
+        astr = json.dumps(data, indent=2, sort_keys=self._do_sort, ensure_ascii=ensure_ascii)
         return astr
 
     def _data_key(self, obj, key:str) -> dict:
