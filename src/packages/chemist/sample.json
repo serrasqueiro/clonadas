@@ -159,6 +159,552 @@
       "Trivial": null
     },
     {
+      "Id": 1002,
+      "Key": "Li",
+      "Title": "Lithium",
+      "Trivial": null
+    },
+    {
+      "Id": 1003,
+      "Key": "Na",
+      "Title": "Sodium",
+      "Trivial": null
+    },
+    {
+      "Id": 1004,
+      "Key": "K",
+      "Title": "Potassium",
+      "Trivial": null
+    },
+    {
+      "Id": 1005,
+      "Key": "Rb",
+      "Title": "Rubidium",
+      "Trivial": null
+    },
+    {
+      "Id": 1006,
+      "Key": "Cs",
+      "Title": "Caesium",
+      "Trivial": null
+    },
+    {
+      "Id": 1007,
+      "Key": "Fr",
+      "Title": "Francium",
+      "Trivial": null
+    },
+    {
+      "Id": 1022,
+      "Key": "Be",
+      "Title": "Beryllium",
+      "Trivial": null
+    },
+    {
+      "Id": 1023,
+      "Key": "Mg",
+      "Title": "Magnesium",
+      "Trivial": null
+    },
+    {
+      "Id": 1024,
+      "Key": "Ca",
+      "Title": "Calcium",
+      "Trivial": null
+    },
+    {
+      "Id": 1025,
+      "Key": "Sr",
+      "Title": "Strontium",
+      "Trivial": null
+    },
+    {
+      "Id": 1026,
+      "Key": "Ba",
+      "Title": "Barium",
+      "Trivial": null
+    },
+    {
+      "Id": 1027,
+      "Key": "Ra",
+      "Title": "Radium",
+      "Trivial": null
+    },
+    {
+      "Id": 1706,
+      "Key": "La-Yb",
+      "Title": "Lanthanide",
+      "Trivial": null
+    },
+    {
+      "Id": 1707,
+      "Key": "Ac-No",
+      "Title": "Actinide",
+      "Trivial": null
+    },
+    {
+      "Id": 1034,
+      "Key": "Sc",
+      "Title": "Scandium",
+      "Trivial": null
+    },
+    {
+      "Id": 1035,
+      "Key": "Y",
+      "Title": "Yttrium",
+      "Trivial": null
+    },
+    {
+      "Id": 1036,
+      "Key": "Lu",
+      "Title": "Lutetium",
+      "Trivial": null
+    },
+    {
+      "Id": 1037,
+      "Key": "Lr",
+      "Title": "Lawrencium",
+      "Trivial": null
+    },
+    {
+      "Id": 1044,
+      "Key": "Ti",
+      "Title": "Titanium",
+      "Trivial": null
+    },
+    {
+      "Id": 1045,
+      "Key": "Zr",
+      "Title": "Zirconium",
+      "Trivial": null
+    },
+    {
+      "Id": 1046,
+      "Key": "Hf",
+      "Title": "Hafnium",
+      "Trivial": null
+    },
+    {
+      "Id": 1047,
+      "Key": "Rf",
+      "Title": "Rutherfordium",
+      "Trivial": null
+    },
+    {
+      "Id": 1054,
+      "Key": "V",
+      "Title": "Vanadium",
+      "Trivial": null
+    },
+    {
+      "Id": 1055,
+      "Key": "Nb",
+      "Title": "Niobium",
+      "Trivial": null
+    },
+    {
+      "Id": 1056,
+      "Key": "Ta",
+      "Title": "Tantalum",
+      "Trivial": null
+    },
+    {
+      "Id": 1057,
+      "Key": "Db",
+      "Title": "Dubnium",
+      "Trivial": null
+    },
+    {
+      "Id": 1064,
+      "Key": "Cr",
+      "Title": "Chromium",
+      "Trivial": null
+    },
+    {
+      "Id": 1065,
+      "Key": "Mo",
+      "Title": "Molybdenum",
+      "Trivial": null
+    },
+    {
+      "Id": 1066,
+      "Key": "W",
+      "Title": "Tungsten",
+      "Trivial": null
+    },
+    {
+      "Id": 1067,
+      "Key": "Sg",
+      "Title": "Seaborgium",
+      "Trivial": null
+    },
+    {
+      "Id": 1074,
+      "Key": "Mn",
+      "Title": "Manganese",
+      "Trivial": null
+    },
+    {
+      "Id": 1075,
+      "Key": "Tc",
+      "Title": "Technetium",
+      "Trivial": null
+    },
+    {
+      "Id": 1076,
+      "Key": "Re",
+      "Title": "Rhenium",
+      "Trivial": null
+    },
+    {
+      "Id": 1077,
+      "Key": "Bh",
+      "Title": "Bohrium",
+      "Trivial": null
+    },
+    {
+      "Id": 1084,
+      "Key": "Fe",
+      "Title": "Iron",
+      "Trivial": null
+    },
+    {
+      "Id": 1085,
+      "Key": "Ru",
+      "Title": "Ruthenium",
+      "Trivial": null
+    },
+    {
+      "Id": 1086,
+      "Key": "Os",
+      "Title": "Osmium",
+      "Trivial": null
+    },
+    {
+      "Id": 1087,
+      "Key": "Hs",
+      "Title": "Hassium",
+      "Trivial": null
+    },
+    {
+      "Id": 1094,
+      "Key": "Co",
+      "Title": "Cobalt",
+      "Trivial": null
+    },
+    {
+      "Id": 1095,
+      "Key": "Rh",
+      "Title": "Rhodium",
+      "Trivial": null
+    },
+    {
+      "Id": 1096,
+      "Key": "Ir",
+      "Title": "Iridium",
+      "Trivial": null
+    },
+    {
+      "Id": 1097,
+      "Key": "Mt",
+      "Title": "Meitnerium",
+      "Trivial": null
+    },
+    {
+      "Id": 1104,
+      "Key": "Ni",
+      "Title": "Nickel",
+      "Trivial": null
+    },
+    {
+      "Id": 1105,
+      "Key": "Pd",
+      "Title": "Palladium",
+      "Trivial": null
+    },
+    {
+      "Id": 1106,
+      "Key": "Pt",
+      "Title": "Platinum",
+      "Trivial": null
+    },
+    {
+      "Id": 1107,
+      "Key": "Ds",
+      "Title": "Darmstadtium",
+      "Trivial": null
+    },
+    {
+      "Id": 1114,
+      "Key": "Cu",
+      "Title": "Copper",
+      "Trivial": null
+    },
+    {
+      "Id": 1115,
+      "Key": "Ag",
+      "Title": "Silver",
+      "Trivial": null
+    },
+    {
+      "Id": 1116,
+      "Key": "Au",
+      "Title": "Gold",
+      "Trivial": null
+    },
+    {
+      "Id": 1117,
+      "Key": "Rg",
+      "Title": "Roentgenium",
+      "Trivial": null
+    },
+    {
+      "Id": 1124,
+      "Key": "Zn",
+      "Title": "Zinc",
+      "Trivial": null
+    },
+    {
+      "Id": 1125,
+      "Key": "Cd",
+      "Title": "Cadmium",
+      "Trivial": null
+    },
+    {
+      "Id": 1126,
+      "Key": "Hg",
+      "Title": "Mercury (element)",
+      "Trivial": null
+    },
+    {
+      "Id": 1127,
+      "Key": "Cn",
+      "Title": "Copernicium",
+      "Trivial": null
+    },
+    {
+      "Id": 1132,
+      "Key": "B",
+      "Title": "Boron",
+      "Trivial": null
+    },
+    {
+      "Id": 1133,
+      "Key": "Al",
+      "Title": "Aluminium",
+      "Trivial": null
+    },
+    {
+      "Id": 1134,
+      "Key": "Ga",
+      "Title": "Gallium",
+      "Trivial": null
+    },
+    {
+      "Id": 1135,
+      "Key": "In",
+      "Title": "Indium",
+      "Trivial": null
+    },
+    {
+      "Id": 1136,
+      "Key": "Tl",
+      "Title": "Thallium",
+      "Trivial": null
+    },
+    {
+      "Id": 1137,
+      "Key": "Nh",
+      "Title": "Nihonium",
+      "Trivial": null
+    },
+    {
+      "Id": 1142,
+      "Key": "C",
+      "Title": "Carbon",
+      "Trivial": null
+    },
+    {
+      "Id": 1143,
+      "Key": "Si",
+      "Title": "Silicon",
+      "Trivial": null
+    },
+    {
+      "Id": 1144,
+      "Key": "Ge",
+      "Title": "Germanium",
+      "Trivial": null
+    },
+    {
+      "Id": 1145,
+      "Key": "Sn",
+      "Title": "Tin",
+      "Trivial": null
+    },
+    {
+      "Id": 1146,
+      "Key": "Pb",
+      "Title": "Lead",
+      "Trivial": null
+    },
+    {
+      "Id": 1147,
+      "Key": "Fl",
+      "Title": "Flerovium",
+      "Trivial": null
+    },
+    {
+      "Id": 1152,
+      "Key": "N",
+      "Title": "Nitrogen",
+      "Trivial": null
+    },
+    {
+      "Id": 1153,
+      "Key": "P",
+      "Title": "Phosphorus",
+      "Trivial": null
+    },
+    {
+      "Id": 1154,
+      "Key": "As",
+      "Title": "Arsenic",
+      "Trivial": null
+    },
+    {
+      "Id": 1155,
+      "Key": "Sb",
+      "Title": "Antimony",
+      "Trivial": null
+    },
+    {
+      "Id": 1156,
+      "Key": "Bi",
+      "Title": "Bismuth",
+      "Trivial": null
+    },
+    {
+      "Id": 1157,
+      "Key": "Mc",
+      "Title": "Moscovium",
+      "Trivial": null
+    },
+    {
+      "Id": 1162,
+      "Key": "O",
+      "Title": "Oxygen",
+      "Trivial": null
+    },
+    {
+      "Id": 1163,
+      "Key": "S",
+      "Title": "Sulfur",
+      "Trivial": null
+    },
+    {
+      "Id": 1164,
+      "Key": "Se",
+      "Title": "Selenium",
+      "Trivial": null
+    },
+    {
+      "Id": 1165,
+      "Key": "Te",
+      "Title": "Tellurium",
+      "Trivial": null
+    },
+    {
+      "Id": 1166,
+      "Key": "Po",
+      "Title": "Polonium",
+      "Trivial": null
+    },
+    {
+      "Id": 1167,
+      "Key": "Lv",
+      "Title": "Livermorium",
+      "Trivial": null
+    },
+    {
+      "Id": 1172,
+      "Key": "F",
+      "Title": "Fluorine",
+      "Trivial": null
+    },
+    {
+      "Id": 1173,
+      "Key": "Cl",
+      "Title": "Chlorine",
+      "Trivial": null
+    },
+    {
+      "Id": 1174,
+      "Key": "Br",
+      "Title": "Bromine",
+      "Trivial": null
+    },
+    {
+      "Id": 1175,
+      "Key": "I",
+      "Title": "Iodine",
+      "Trivial": null
+    },
+    {
+      "Id": 1176,
+      "Key": "At",
+      "Title": "Astatine",
+      "Trivial": null
+    },
+    {
+      "Id": 1177,
+      "Key": "Ts",
+      "Title": "Tennessine",
+      "Trivial": null
+    },
+    {
+      "Id": 1181,
+      "Key": "He",
+      "Title": "Helium",
+      "Trivial": null
+    },
+    {
+      "Id": 1182,
+      "Key": "Ne",
+      "Title": "Neon",
+      "Trivial": null
+    },
+    {
+      "Id": 1183,
+      "Key": "Ar",
+      "Title": "Argon",
+      "Trivial": null
+    },
+    {
+      "Id": 1184,
+      "Key": "Kr",
+      "Title": "Krypton",
+      "Trivial": null
+    },
+    {
+      "Id": 1185,
+      "Key": "Xe",
+      "Title": "Xenon",
+      "Trivial": null
+    },
+    {
+      "Id": 1186,
+      "Key": "Rn",
+      "Title": "Radon",
+      "Trivial": null
+    },
+    {
+      "Id": 1187,
+      "Key": "Og",
+      "Title": "Oganesson",
+      "Trivial": null
+    },
+    {
       "Id": 1188,
       "Key": "",
       "Title": null,
