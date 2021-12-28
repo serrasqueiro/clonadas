@@ -15,11 +15,13 @@ class ZObject():
     """
     _table = None
     _do_sort = True
+    _msg = ""
 
     def __init__(self, info, encoding:str):
         self._table = [] if info is None else info
         self._encoding = encoding
         self._do_sort = True
+        self._msg = ""
 
     def encoding(self) -> str:
         """ Returns input/ output encoding """
@@ -38,6 +40,12 @@ class ZObject():
         """
         _, result = self.get_one_key(name)
         return result
+
+    def get_key(self, name:str):
+        """ Returns the table key entry 'name'. """
+        if not self._table:
+            return None
+        return self._table[name]
 
     def get_one_key(self, name:str) -> tuple:
         """ If name matches exactly one key, returns it.

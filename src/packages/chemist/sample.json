@@ -1,0 +1,183 @@
+{
+  "!sample.json": [
+    {
+      "Id": 0,
+      "Key": null,
+      "Mark": null,
+      "Title": "Sample to be used by zson"
+    }
+  ],
+  "01": [
+    {
+      "Id": 1001,
+      "Key": "group-1",
+      "Title": "Lithium group",
+      "Trivial": "H and Alkali metals"
+    }
+  ],
+  "02": [
+    {
+      "Id": 1002,
+      "Key": "group-2",
+      "Title": "Beryllium group",
+      "Trivial": "Alkaline earth metals"
+    }
+  ],
+  "03": [
+    {
+      "Id": 1004,
+      "Key": "group-3",
+      "Title": "Scandium group",
+      "Trivial": "Scandium"
+    }
+  ],
+  "04": [
+    {
+      "Id": 1005,
+      "Key": "group-4",
+      "Title": "Titanium group",
+      "Trivial": "Titanium"
+    }
+  ],
+  "05": [
+    {
+      "Id": 1006,
+      "Key": "group-5",
+      "Title": "Vanadium group",
+      "Trivial": "Vanadium"
+    }
+  ],
+  "06": [
+    {
+      "Id": 1007,
+      "Key": "group-6",
+      "Title": "Chromium group",
+      "Trivial": "Chromium"
+    }
+  ],
+  "07": [
+    {
+      "Id": 1008,
+      "Key": "group-7",
+      "Title": "Manganese group",
+      "Trivial": "Manganese"
+    }
+  ],
+  "08": [
+    {
+      "Id": 1009,
+      "Key": "group-8",
+      "Title": "Iron group",
+      "Trivial": "Iron"
+    }
+  ],
+  "09": [
+    {
+      "Id": 1010,
+      "Key": "group-9",
+      "Title": "Cobalt group",
+      "Trivial": "Cobalt"
+    }
+  ],
+  "10": [
+    {
+      "Id": 1011,
+      "Key": "group-10",
+      "Title": "Nickel group",
+      "Trivial": "Nickel"
+    }
+  ],
+  "11": [
+    {
+      "Id": 1012,
+      "Key": "group-11",
+      "Title": "Copper group",
+      "Trivial": "Coinage metals"
+    }
+  ],
+  "12": [
+    {
+      "Id": 1013,
+      "Key": "group-12",
+      "Title": "Zinc group",
+      "Trivial": "Zinc"
+    }
+  ],
+  "13": [
+    {
+      "Id": 1014,
+      "Key": "group-13",
+      "Title": "Boron group",
+      "Trivial": "Triels"
+    }
+  ],
+  "14": [
+    {
+      "Id": 1015,
+      "Key": "group-14",
+      "Title": "Carbon group",
+      "Trivial": "Tetrels"
+    }
+  ],
+  "15": [
+    {
+      "Id": 1016,
+      "Key": "group-15",
+      "Title": "Nitrogen group",
+      "Trivial": "Pnictogens"
+    }
+  ],
+  "16": [
+    {
+      "Id": 1017,
+      "Key": "group-16",
+      "Title": "Oxygen group",
+      "Trivial": "Chalcogens"
+    }
+  ],
+  "17": [
+    {
+      "Id": 1018,
+      "Key": "group-17",
+      "Title": "Fluorine group",
+      "Trivial": "Halogens"
+    }
+  ],
+  "18": [
+    {
+      "Id": 1019,
+      "Key": "group-18",
+      "Title": "Helium group",
+      "Trivial": "Noble gases"
+    }
+  ],
+  "by-name": [
+    {
+      "Id": 1101,
+      "Key": "H",
+      "Title": "Hydrogen",
+      "Trivial": null
+    },
+    {
+      "Id": 1188,
+      "Key": "",
+      "Title": null,
+      "Trivial": null
+    }
+  ],
+  "n/a-group": [
+    {
+      "Id": 1003,
+      "Key": "n/a",
+      "Title": "",
+      "Trivial": "Rare elements"
+    }
+  ],
+  "~": [
+    {
+      "Id": -1,
+      "Key": "*",
+      "Title": ""
+    }
+  ]
+}

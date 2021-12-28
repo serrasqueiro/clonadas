@@ -24,6 +24,12 @@ class IdTable(ZObject):
         """
         super().__init__(info, encoding)
         assert isinstance(self._table, (list, dict))
+        # check_head: whether check data upon input:
+        #	n - No check
+        #	p - Partial, dictionary
+        #	i - Check also 'Id' within
+        self.check_head = "n"
+        # Indexing:
         self._index = ZIndex("utf-8")
 
     def inject(self, obj):
@@ -78,7 +84,55 @@ class IdTable(ZObject):
         """ Read table from data string. """
         inp = json.loads(data)
         self._table = inp
-        return True
+        if self.check_head in "n":
+            return True
+        self._msg = ""
+        msg = self._check_data(data.splitlines())
+        self._msg = msg
+        if msg:
+            return False
+        if self.check_head in "i":
+            msg = self._check_ids([(key, tbl) for key, tbl in self._table.items()])
+        self._msg = msg
+        return msg == ""
+
+    def _check_data(self, lines:list) -> str:
+        head, tail, payload = lines[0], lines[-1], lines[1:-1]
+        is_dict = head == "{"
+        if is_dict:
+            if tail != "}":
+                return "Missing '}'"
+        elif head == "[":
+            if tail != "]":
+                return "Missing ']'"
+        else:
+            return "Missing {} or []"
+        if not is_dict:
+            return ""	# assume all ok, simply
+        dct, idx = {}, 0
+        for line in lines:
+            idx += 1
+            if not line.startswith('  "'):
+                continue
+            key = line.split('  "', maxsplit=1)[1].split('"', maxsplit=1)[0]
+            if key in dct:
+                return f"Line {idx}: Duplicate key '{key}', first found at: {dct[key]}"
+            dct[key] = idx
+        return ""
+
+    def _check_ids(self, lolist:list) -> str:
+        """ Check if 'Id' is unique within all (key, list) """
+        for key, alist in lolist:
+            if not key:
+                continue
+            ids = {}
+            for elem in alist:
+                an_id = elem.get("Id")
+                assert an_id is not None, f"Key='{key}', missing 'Id'"
+                if an_id in ids:
+                    return f"Key='{key}', duplicate Id='{an_id}'"
+                ids[an_id] = key
+        return ""
 
     def _write_content(self, path:str, astr:str) -> bool:
         if os.name == "nt":
