@@ -201,6 +201,7 @@ class Elements(dict):
 class Atom():
     """ Atom/ Element, class helper. """
     def __init__(self, symbol:str="", item=None):
+        assert isinstance(symbol, str)
         sample = {
             "Id": 1101,
             "Key": "H",
@@ -242,13 +243,14 @@ class Atom():
 
     def _from_symbol(self, symbol:str):
         assert symbol
+        pair = ATOMS[symbol]
         self.props = {
             "Id": 0,
             "Key": symbol,
-            "Title": ATOMS[symbol][0].replace("-", ""),
+            "Title": pair[0].replace("-", ""),
             "Trivial": None,
             "Weight": -1,
-            "Wsa": ATOMS[symbol][1],
+            "Wsa": pair[1],
         }
 
     def __str__(self) -> str:
