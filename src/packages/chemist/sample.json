@@ -156,559 +156,745 @@
       "Id": 1101,
       "Key": "H",
       "Title": "Hydrogen",
-      "Trivial": null
+      "Trivial": null,
+      "Weight": 1,
+      "Wsa": ""
     },
     {
       "Id": 1002,
       "Key": "Li",
       "Title": "Lithium",
-      "Trivial": null
+      "Trivial": null,
+      "Weight": 3,
+      "Wsa": ""
     },
     {
       "Id": 1003,
       "Key": "Na",
       "Title": "Sodium",
-      "Trivial": null
+      "Trivial": null,
+      "Weight": 11,
+      "Wsa": ""
     },
     {
       "Id": 1004,
       "Key": "K",
       "Title": "Potassium",
-      "Trivial": null
+      "Trivial": null,
+      "Weight": 19,
+      "Wsa": ""
     },
     {
       "Id": 1005,
       "Key": "Rb",
       "Title": "Rubidium",
-      "Trivial": null
+      "Trivial": null,
+      "Weight": 37,
+      "Wsa": ""
     },
     {
       "Id": 1006,
       "Key": "Cs",
       "Title": "Caesium",
-      "Trivial": null
+      "Trivial": null,
+      "Weight": 55,
+      "Wsa": ""
     },
     {
       "Id": 1007,
       "Key": "Fr",
       "Title": "Francium",
-      "Trivial": null
+      "Trivial": null,
+      "Weight": 87,
+      "Wsa": ""
     },
     {
       "Id": 1022,
       "Key": "Be",
       "Title": "Beryllium",
-      "Trivial": null
+      "Trivial": null,
+      "Weight": 4,
+      "Wsa": ""
     },
     {
       "Id": 1023,
       "Key": "Mg",
       "Title": "Magnesium",
-      "Trivial": null
+      "Trivial": null,
+      "Weight": 12,
+      "Wsa": ""
     },
     {
       "Id": 1024,
       "Key": "Ca",
       "Title": "Calcium",
-      "Trivial": null
+      "Trivial": null,
+      "Weight": 20,
+      "Wsa": ""
     },
     {
       "Id": 1025,
       "Key": "Sr",
       "Title": "Strontium",
-      "Trivial": null
+      "Trivial": null,
+      "Weight": 38,
+      "Wsa": ""
     },
     {
       "Id": 1026,
       "Key": "Ba",
       "Title": "Barium",
-      "Trivial": null
+      "Trivial": null,
+      "Weight": 56,
+      "Wsa": ""
     },
     {
       "Id": 1027,
       "Key": "Ra",
       "Title": "Radium",
-      "Trivial": null
+      "Trivial": null,
+      "Weight": 88,
+      "Wsa": ""
     },
     {
       "Id": 1706,
       "Key": "La-Yb",
       "Title": "Lanthanide",
-      "Trivial": null
+      "Trivial": null,
+      "Weight": 0,
+      "Wsa": ""
     },
     {
       "Id": 1707,
       "Key": "Ac-No",
       "Title": "Actinide",
-      "Trivial": null
+      "Trivial": null,
+      "Weight": 0,
+      "Wsa": ""
     },
     {
       "Id": 1034,
       "Key": "Sc",
       "Title": "Scandium",
-      "Trivial": null
+      "Trivial": null,
+      "Weight": 21,
+      "Wsa": ""
     },
     {
       "Id": 1035,
       "Key": "Y",
       "Title": "Yttrium",
-      "Trivial": null
+      "Trivial": null,
+      "Weight": 39,
+      "Wsa": ""
     },
     {
       "Id": 1036,
       "Key": "Lu",
       "Title": "Lutetium",
-      "Trivial": null
+      "Trivial": null,
+      "Weight": 71,
+      "Wsa": ""
     },
     {
       "Id": 1037,
       "Key": "Lr",
       "Title": "Lawrencium",
-      "Trivial": null
+      "Trivial": null,
+      "Weight": 103,
+      "Wsa": ""
     },
     {
       "Id": 1044,
       "Key": "Ti",
       "Title": "Titanium",
-      "Trivial": null
+      "Trivial": null,
+      "Weight": 22,
+      "Wsa": ""
     },
     {
       "Id": 1045,
       "Key": "Zr",
       "Title": "Zirconium",
-      "Trivial": null
+      "Trivial": null,
+      "Weight": 40,
+      "Wsa": ""
     },
     {
       "Id": 1046,
       "Key": "Hf",
       "Title": "Hafnium",
-      "Trivial": null
+      "Trivial": null,
+      "Weight": 72,
+      "Wsa": ""
     },
     {
       "Id": 1047,
       "Key": "Rf",
       "Title": "Rutherfordium",
-      "Trivial": null
+      "Trivial": null,
+      "Weight": 104,
+      "Wsa": ""
     },
     {
       "Id": 1054,
       "Key": "V",
       "Title": "Vanadium",
-      "Trivial": null
+      "Trivial": null,
+      "Weight": 23,
+      "Wsa": ""
     },
     {
       "Id": 1055,
       "Key": "Nb",
       "Title": "Niobium",
-      "Trivial": null
+      "Trivial": null,
+      "Weight": 41,
+      "Wsa": ""
     },
     {
       "Id": 1056,
       "Key": "Ta",
       "Title": "Tantalum",
-      "Trivial": null
+      "Trivial": null,
+      "Weight": 73,
+      "Wsa": ""
     },
     {
       "Id": 1057,
       "Key": "Db",
       "Title": "Dubnium",
-      "Trivial": null
+      "Trivial": null,
+      "Weight": 105,
+      "Wsa": ""
     },
     {
       "Id": 1064,
       "Key": "Cr",
       "Title": "Chromium",
-      "Trivial": null
+      "Trivial": null,
+      "Weight": 24,
+      "Wsa": ""
     },
     {
       "Id": 1065,
       "Key": "Mo",
       "Title": "Molybdenum",
-      "Trivial": null
+      "Trivial": null,
+      "Weight": 42,
+      "Wsa": ""
     },
     {
       "Id": 1066,
       "Key": "W",
       "Title": "Tungsten",
-      "Trivial": null
+      "Trivial": "Wolfram",
+      "Weight": 74,
+      "Wsa": ""
     },
     {
       "Id": 1067,
       "Key": "Sg",
       "Title": "Seaborgium",
-      "Trivial": null
+      "Trivial": null,
+      "Weight": 106,
+      "Wsa": ""
     },
     {
       "Id": 1074,
       "Key": "Mn",
       "Title": "Manganese",
-      "Trivial": null
+      "Trivial": null,
+      "Weight": 25,
+      "Wsa": ""
     },
     {
       "Id": 1075,
       "Key": "Tc",
       "Title": "Technetium",
-      "Trivial": null
+      "Trivial": null,
+      "Weight": 43,
+      "Wsa": ""
     },
     {
       "Id": 1076,
       "Key": "Re",
       "Title": "Rhenium",
-      "Trivial": null
+      "Trivial": null,
+      "Weight": 75,
+      "Wsa": ""
     },
     {
       "Id": 1077,
       "Key": "Bh",
       "Title": "Bohrium",
-      "Trivial": null
+      "Trivial": null,
+      "Weight": 107,
+      "Wsa": ""
     },
     {
       "Id": 1084,
       "Key": "Fe",
       "Title": "Iron",
-      "Trivial": null
+      "Trivial": null,
+      "Weight": 26,
+      "Wsa": ""
     },
     {
       "Id": 1085,
       "Key": "Ru",
       "Title": "Ruthenium",
-      "Trivial": null
+      "Trivial": null,
+      "Weight": 44,
+      "Wsa": ""
     },
     {
       "Id": 1086,
       "Key": "Os",
       "Title": "Osmium",
-      "Trivial": null
+      "Trivial": null,
+      "Weight": 76,
+      "Wsa": ""
     },
     {
       "Id": 1087,
       "Key": "Hs",
       "Title": "Hassium",
-      "Trivial": null
+      "Trivial": null,
+      "Weight": 108,
+      "Wsa": ""
     },
     {
       "Id": 1094,
       "Key": "Co",
       "Title": "Cobalt",
-      "Trivial": null
+      "Trivial": null,
+      "Weight": 27,
+      "Wsa": ""
     },
     {
       "Id": 1095,
       "Key": "Rh",
       "Title": "Rhodium",
-      "Trivial": null
+      "Trivial": null,
+      "Weight": 45,
+      "Wsa": ""
     },
     {
       "Id": 1096,
       "Key": "Ir",
       "Title": "Iridium",
-      "Trivial": null
+      "Trivial": null,
+      "Weight": 77,
+      "Wsa": ""
     },
     {
       "Id": 1097,
       "Key": "Mt",
       "Title": "Meitnerium",
-      "Trivial": null
+      "Trivial": null,
+      "Weight": 109,
+      "Wsa": ""
     },
     {
       "Id": 1104,
       "Key": "Ni",
       "Title": "Nickel",
-      "Trivial": null
+      "Trivial": null,
+      "Weight": 28,
+      "Wsa": ""
     },
     {
       "Id": 1105,
       "Key": "Pd",
       "Title": "Palladium",
-      "Trivial": null
+      "Trivial": null,
+      "Weight": 46,
+      "Wsa": ""
     },
     {
       "Id": 1106,
       "Key": "Pt",
       "Title": "Platinum",
-      "Trivial": null
+      "Trivial": null,
+      "Weight": 78,
+      "Wsa": ""
     },
     {
       "Id": 1107,
       "Key": "Ds",
       "Title": "Darmstadtium",
-      "Trivial": null
+      "Trivial": null,
+      "Weight": 110,
+      "Wsa": ""
     },
     {
       "Id": 1114,
       "Key": "Cu",
       "Title": "Copper",
-      "Trivial": null
+      "Trivial": null,
+      "Weight": 29,
+      "Wsa": ""
     },
     {
       "Id": 1115,
       "Key": "Ag",
       "Title": "Silver",
-      "Trivial": null
+      "Trivial": null,
+      "Weight": 47,
+      "Wsa": ""
     },
     {
       "Id": 1116,
       "Key": "Au",
       "Title": "Gold",
-      "Trivial": null
+      "Trivial": null,
+      "Weight": 79,
+      "Wsa": ""
     },
     {
       "Id": 1117,
       "Key": "Rg",
       "Title": "Roentgenium",
-      "Trivial": null
+      "Trivial": null,
+      "Weight": 111,
+      "Wsa": ""
     },
     {
       "Id": 1124,
       "Key": "Zn",
       "Title": "Zinc",
-      "Trivial": null
+      "Trivial": null,
+      "Weight": 30,
+      "Wsa": ""
     },
     {
       "Id": 1125,
       "Key": "Cd",
       "Title": "Cadmium",
-      "Trivial": null
+      "Trivial": null,
+      "Weight": 48,
+      "Wsa": ""
     },
     {
       "Id": 1126,
       "Key": "Hg",
-      "Title": "Mercury (element)",
-      "Trivial": null
+      "Title": "Mercury",
+      "Trivial": null,
+      "Weight": 80,
+      "Wsa": ""
     },
     {
       "Id": 1127,
       "Key": "Cn",
       "Title": "Copernicium",
-      "Trivial": null
+      "Trivial": null,
+      "Weight": 112,
+      "Wsa": ""
     },
     {
       "Id": 1132,
       "Key": "B",
       "Title": "Boron",
-      "Trivial": null
+      "Trivial": null,
+      "Weight": 5,
+      "Wsa": ""
     },
     {
       "Id": 1133,
       "Key": "Al",
       "Title": "Aluminium",
-      "Trivial": null
+      "Trivial": null,
+      "Weight": 13,
+      "Wsa": ""
     },
     {
       "Id": 1134,
       "Key": "Ga",
       "Title": "Gallium",
-      "Trivial": null
+      "Trivial": null,
+      "Weight": 31,
+      "Wsa": ""
     },
     {
       "Id": 1135,
       "Key": "In",
       "Title": "Indium",
-      "Trivial": null
+      "Trivial": null,
+      "Weight": 49,
+      "Wsa": ""
     },
     {
       "Id": 1136,
       "Key": "Tl",
       "Title": "Thallium",
-      "Trivial": null
+      "Trivial": null,
+      "Weight": 81,
+      "Wsa": ""
     },
     {
       "Id": 1137,
       "Key": "Nh",
       "Title": "Nihonium",
-      "Trivial": null
+      "Trivial": null,
+      "Weight": 113,
+      "Wsa": ""
     },
     {
       "Id": 1142,
       "Key": "C",
       "Title": "Carbon",
-      "Trivial": null
+      "Trivial": null,
+      "Weight": 6,
+      "Wsa": ""
     },
     {
       "Id": 1143,
       "Key": "Si",
       "Title": "Silicon",
-      "Trivial": null
+      "Trivial": null,
+      "Weight": 14,
+      "Wsa": ""
     },
     {
       "Id": 1144,
       "Key": "Ge",
       "Title": "Germanium",
-      "Trivial": null
+      "Trivial": null,
+      "Weight": 32,
+      "Wsa": ""
     },
     {
       "Id": 1145,
       "Key": "Sn",
       "Title": "Tin",
-      "Trivial": null
+      "Trivial": null,
+      "Weight": 50,
+      "Wsa": ""
     },
     {
       "Id": 1146,
       "Key": "Pb",
       "Title": "Lead",
-      "Trivial": null
+      "Trivial": null,
+      "Weight": 82,
+      "Wsa": ""
     },
     {
       "Id": 1147,
       "Key": "Fl",
       "Title": "Flerovium",
-      "Trivial": null
+      "Trivial": null,
+      "Weight": 114,
+      "Wsa": ""
     },
     {
       "Id": 1152,
       "Key": "N",
       "Title": "Nitrogen",
-      "Trivial": null
+      "Trivial": null,
+      "Weight": 7,
+      "Wsa": ""
     },
     {
       "Id": 1153,
       "Key": "P",
       "Title": "Phosphorus",
-      "Trivial": null
+      "Trivial": null,
+      "Weight": 15,
+      "Wsa": ""
     },
     {
       "Id": 1154,
       "Key": "As",
       "Title": "Arsenic",
-      "Trivial": null
+      "Trivial": null,
+      "Weight": 33,
+      "Wsa": ""
     },
     {
       "Id": 1155,
       "Key": "Sb",
       "Title": "Antimony",
-      "Trivial": null
+      "Trivial": null,
+      "Weight": 51,
+      "Wsa": ""
     },
     {
       "Id": 1156,
       "Key": "Bi",
       "Title": "Bismuth",
-      "Trivial": null
+      "Trivial": null,
+      "Weight": 83,
+      "Wsa": ""
     },
     {
       "Id": 1157,
       "Key": "Mc",
       "Title": "Moscovium",
-      "Trivial": null
+      "Trivial": null,
+      "Weight": 115,
+      "Wsa": ""
     },
     {
       "Id": 1162,
       "Key": "O",
       "Title": "Oxygen",
-      "Trivial": null
+      "Trivial": null,
+      "Weight": 8,
+      "Wsa": ""
     },
     {
       "Id": 1163,
       "Key": "S",
       "Title": "Sulfur",
-      "Trivial": null
+      "Trivial": null,
+      "Weight": 16,
+      "Wsa": ""
     },
     {
       "Id": 1164,
       "Key": "Se",
       "Title": "Selenium",
-      "Trivial": null
+      "Trivial": null,
+      "Weight": 34,
+      "Wsa": ""
     },
     {
       "Id": 1165,
       "Key": "Te",
       "Title": "Tellurium",
-      "Trivial": null
+      "Trivial": null,
+      "Weight": 52,
+      "Wsa": ""
     },
     {
       "Id": 1166,
       "Key": "Po",
       "Title": "Polonium",
-      "Trivial": null
+      "Trivial": null,
+      "Weight": 84,
+      "Wsa": ""
     },
     {
       "Id": 1167,
       "Key": "Lv",
       "Title": "Livermorium",
-      "Trivial": null
+      "Trivial": null,
+      "Weight": 116,
+      "Wsa": ""
     },
     {
       "Id": 1172,
       "Key": "F",
       "Title": "Fluorine",
-      "Trivial": null
+      "Trivial": null,
+      "Weight": 9,
+      "Wsa": ""
     },
     {
       "Id": 1173,
       "Key": "Cl",
       "Title": "Chlorine",
-      "Trivial": null
+      "Trivial": null,
+      "Weight": 17,
+      "Wsa": ""
     },
     {
       "Id": 1174,
       "Key": "Br",
       "Title": "Bromine",
-      "Trivial": null
+      "Trivial": null,
+      "Weight": 35,
+      "Wsa": ""
     },
     {
       "Id": 1175,
       "Key": "I",
       "Title": "Iodine",
-      "Trivial": null
+      "Trivial": null,
+      "Weight": 53,
+      "Wsa": ""
     },
     {
       "Id": 1176,
       "Key": "At",
       "Title": "Astatine",
-      "Trivial": null
+      "Trivial": null,
+      "Weight": 85,
+      "Wsa": ""
     },
     {
       "Id": 1177,
       "Key": "Ts",
       "Title": "Tennessine",
-      "Trivial": null
+      "Trivial": null,
+      "Weight": 117,
+      "Wsa": ""
     },
     {
       "Id": 1181,
       "Key": "He",
       "Title": "Helium",
-      "Trivial": null
+      "Trivial": null,
+      "Weight": 2,
+      "Wsa": ""
     },
     {
       "Id": 1182,
       "Key": "Ne",
       "Title": "Neon",
-      "Trivial": null
+      "Trivial": null,
+      "Weight": 10,
+      "Wsa": ""
     },
     {
       "Id": 1183,
       "Key": "Ar",
       "Title": "Argon",
-      "Trivial": null
+      "Trivial": null,
+      "Weight": 18,
+      "Wsa": ""
     },
     {
       "Id": 1184,
       "Key": "Kr",
       "Title": "Krypton",
-      "Trivial": null
+      "Trivial": null,
+      "Weight": 36,
+      "Wsa": ""
     },
     {
       "Id": 1185,
       "Key": "Xe",
       "Title": "Xenon",
-      "Trivial": null
+      "Trivial": null,
+      "Weight": 54,
+      "Wsa": ""
     },
     {
       "Id": 1186,
       "Key": "Rn",
       "Title": "Radon",
-      "Trivial": null
+      "Trivial": null,
+      "Weight": 86,
+      "Wsa": ""
     },
     {
       "Id": 1187,
       "Key": "Og",
       "Title": "Oganesson",
-      "Trivial": null
+      "Trivial": null,
+      "Weight": 118,
+      "Wsa": ""
     },
     {
       "Id": 1709,
       "Key": "",
       "Title": null,
-      "Trivial": null
+      "Trivial": null,
+      "Weight": 0,
+      "Wsa": ""
     }
   ],
   "n/a-group": [
