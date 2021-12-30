@@ -19,7 +19,7 @@ class ZObject():
 
     def __init__(self, info, encoding:str):
         self._table = [] if info is None else info
-        self._encoding = encoding
+        self._encoding, self._force_ascii = encoding, True
         self._do_sort = True
         self._msg = ""
 
@@ -27,6 +27,9 @@ class ZObject():
         """ Returns input/ output encoding """
         assert self._encoding
         return self._encoding
+
+    def ensure_ascii(self, force_ascii=True):
+        self._force_ascii = force_ascii
 
     def get(self, as_table=False):
         """ Returns the table content. """
@@ -87,7 +90,7 @@ class ZObject():
     def dumps(self, data, key:str="data") -> str:
         """ Dumps JSON object """
         content = data if isinstance(data, dict) else self._data_key(data, key)
-        astr = self._dump_json_string(content)
+        astr = self._dump_json_string(content, self._force_ascii)
         return astr
 
     def dump_sort(self, sort_keys:bool):
