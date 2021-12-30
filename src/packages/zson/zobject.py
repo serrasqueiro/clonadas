@@ -33,6 +33,21 @@ class ZObject():
         assert not as_table, "ToDo"
         return self._table
 
+    def keying(self, alpha:str="A") -> list:
+        """ Return 'A': alphabetical keys (or 'a': case-sensitive sort),
+        or 'X'/ 'x': all keys.
+        """
+        assert isinstance(alpha, str)
+        if isinstance(self._table, list):
+            assert alpha in "Xx"
+            return self._table
+        if alpha in "Xx":
+            return sorted(self._table, key=str.casefold if alpha == "X" else str)
+        if alpha in "Aa":
+            alist = sorted(self._table, key=str.casefold if alpha == "X" else str)
+            return [astr for astr in alist if astr and astr[0].isalpha()]
+        return []
+
     def get_one(self, name:str):
         """ If name matches exactly one key, returns it.
         If name matches multiple keys, returns None.
