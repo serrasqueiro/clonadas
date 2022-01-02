@@ -9,16 +9,21 @@ csv-based table
 
 from zson.zobject import ZObject
 
+ENCODINGS = {
+    "latin-1": "ISO-8859-1",
+}
+
 
 class CSV(ZObject):
     """ CSV-based table
     """
-    _split = ","
+    _default_split = ","
 
     def __init__(self, info=None, encoding="utf-8"):
         """ Initializer: data should be a dictionary or a list.
         """
         self._header_string = ""
+        self._split = CSV._default_split
         super().__init__(info, encoding)
         assert isinstance(self._table, (list, dict))
 
@@ -40,8 +45,10 @@ class CSV(ZObject):
         self._table = cont
         return True
 
-    def load(self, path:str, header:str="a") -> bool:
+    def load(self, path:str, header:str="a", split_chr=None) -> bool:
         """ Loads content from file, at 'path'. """
+        if split_chr is not None:
+            self._split = split_chr
         self._table = []
         try:
             with open(path, "r", encoding=self._encoding) as fdin:
@@ -77,6 +84,12 @@ class CSV(ZObject):
     def dump_json_string(self):
         """ Returns the basic json list (string). """
         return self._dump_json_string(self._table)
+
+    def rows(self):
+        """ Returns the generator object for the table. """
+        assert isinstance(self._table, list)
+        for row in self._table:
+            yield row
 
     def _from_data(self, data:str, header:str) -> bool:
         """ Read table from data string. """
@@ -149,6 +162,12 @@ class CSV(ZObject):
 
     def __repr__(self) -> str:
         return self.dump_json()
+
+    @staticmethod
+    def set_separator(split_chr:str):
+        assert split_chr
+        assert isinstance(split_chr, str)
+        CSV._default_split = split_chr
 
 
 # Main script
