@@ -5,7 +5,7 @@
 json-based table
 """
 
-# pylint: disable=missing-function-docstring
+# pylint: disable=missing-function-docstring, no-self-use
 
 import os
 import json

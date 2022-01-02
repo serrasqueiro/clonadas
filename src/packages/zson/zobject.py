@@ -71,6 +71,7 @@ class ZObject():
         If name does not match anything, returns an empty list.
         """
         res = self._table.get(name)
+        key = None
         if res is not None:
             return name, res
         matched = []
@@ -83,7 +84,7 @@ class ZObject():
                 matched.append((key, self._table[key]))
         if len(matched) > 1:
             return name, None		# Multiple matches!
-        if not matched:
+        if not matched or key is None:
             return "", []
         return key, matched[0][1]
 
