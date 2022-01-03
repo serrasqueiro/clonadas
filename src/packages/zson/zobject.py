@@ -1,8 +1,7 @@
 #-*- coding: utf-8 -*-
 # zobject.py  (c)2021  Henrique Moreira
 
-"""
-json-based table
+""" Generic json-based object
 """
 
 # pylint: disable=missing-function-docstring, no-self-use

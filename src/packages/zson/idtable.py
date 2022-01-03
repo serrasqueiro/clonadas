@@ -33,8 +33,23 @@ class IdTable(ZObject):
         self._index = ZIndex("utf-8")
 
     def inject(self, obj):
+        """ Inject a specific table to this instance. """
         self._index = ZIndex("utf-8")
         self._table = obj
+
+    def reset(self, name:str="sample") -> bool:
+        """ Generic default IdTable """
+        if name.startswith(("!", "~")):
+            first = name[1:]
+        else:
+            first = "!" + name + ".json"
+        head = {"Id": 0, "Key": None, "Mark": None, "Title": ""}
+        tail = {"Id": -1, "Key": "*", "Title": ""}
+        self._table = {
+            first: [head],
+            "~": [tail],
+        }
+        return self.index(first)
 
     def load(self, path:str) -> bool:
         """ Load json content from file. """
@@ -80,7 +95,7 @@ class IdTable(ZObject):
             return sorted(self._index.by_key[key])
         return self._index.by_key[key][a_id]
 
-    def  _from_data(self, data:str) -> bool:
+    def _from_data(self, data:str) -> bool:
         """ Read table from data string. """
         inp = json.loads(data)
         self._table = inp
