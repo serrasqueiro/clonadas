@@ -171,10 +171,14 @@ class CSV(ZObject):
         return self.dump_json()
 
     @staticmethod
-    def set_separator(split_chr:str):
+    def set_separator(split_chr:str=","):
         assert split_chr
         assert isinstance(split_chr, str)
         CSV._default_split = split_chr
+
+    @staticmethod
+    def set_tab_separator():
+        CSV._default_split = "\t"
 
 
 # Main script

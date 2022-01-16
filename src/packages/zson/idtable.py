@@ -20,7 +20,7 @@ class IdTable(ZObject):
     _index = None
 
     def __init__(self, info=None, encoding="utf-8"):
-        """ Initializer: data should be a dictionary or a list.
+        """ Initializer: 'info' should be a dictionary or a list.
         """
         super().__init__(info, encoding)
         assert isinstance(self._table, (list, dict))

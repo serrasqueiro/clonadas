@@ -17,6 +17,7 @@ class ZObject():
     _msg = ""
 
     def __init__(self, info, encoding:str):
+        assert isinstance(encoding, str)
         self._table = [] if info is None else info
         self._encoding, self._force_ascii = encoding, True
         self._do_sort = True
