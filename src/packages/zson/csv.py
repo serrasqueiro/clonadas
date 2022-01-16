@@ -71,13 +71,20 @@ class CSV(ZObject):
         """ Returns the json equivalent to this table. """
         return self.dumps(self._table)
 
-    def dump_json(self, key=None) -> str:
+    def dump_json(self, key=None, key_split=None) -> str:
         """ Shows dictionary with key,
         or just the header() as key.
         """
+        achr = self._split if key_split is None else key_split
         if key is None:
-            keystr = self._split.join(self.header())
+            if achr and achr < " ":
+                # Assume a semi-colon, instead of a tab (for a better json output!)
+                assert achr == "\t", f"Not a tab?, ASCII={ord(achr[0])}d"
+                achr = ";"
+            keystr = achr.join(self.header())
         else:
+            assert isinstance(key, str)
+            assert not key_split, "'key_split' only when 'key' is specified"
             keystr = key
         return self.dumps(self._table, keystr)
 
