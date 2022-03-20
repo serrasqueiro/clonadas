@@ -95,6 +95,12 @@ class IdTable(ZObject):
             return sorted(self._index.by_key[key])
         return self._index.by_key[key][a_id]
 
+    def get_indexes(self) -> dict:
+        """ Returns (unprocessed) indexes. """
+        idxes = self._index.by_key
+        assert isinstance(idxes, dict)
+        return idxes
+
     def _from_data(self, data:str) -> bool:
         """ Read table from data string. """
         inp = json.loads(data)

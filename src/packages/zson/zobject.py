@@ -31,6 +31,10 @@ class ZObject():
     def ensure_ascii(self, force_ascii=True):
         self._force_ascii = force_ascii
 
+    def message(self):
+        """ Returns the (error) message """
+        return self._msg
+
     def get(self, as_table=False):
         """ Returns the table content. """
         assert not as_table, "ToDo"
@@ -101,6 +105,23 @@ class ZObject():
         """ Returns JSON string from dictionary or list. """
         astr = json.dumps(data, indent=2, sort_keys=self._do_sort, ensure_ascii=ensure_ascii)
         return astr
+
+    def key_names_diff(self, key1, key2) -> tuple:
+        """ Returns an empty tuple if key list 1 and key list 2 match.
+        Also allows key dictionaries.
+        If key1 != key2, a tuple with all differences is returned.
+        """
+        diffs = []
+        if isinstance(key1, dict):
+            return self.key_names_diff(sorted(key1), sorted(key2))
+        #print(":::", key1, "vs", key2)
+        for key in sorted(key1):
+            if key not in key2:
+                diffs.append(f"+{key}")
+        for key in sorted(key2):
+            if key not in key1:
+                diffs.append(f"-{key}")
+        return tuple(diffs)
 
     def _data_key(self, obj, key:str) -> dict:
         """ Returns dictionary from list """
