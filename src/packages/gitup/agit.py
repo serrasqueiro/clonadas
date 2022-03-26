@@ -3,9 +3,12 @@
 
 """ Wrapper for common GIT operations
 
-Samles:
-	repo = agit.WrapRepo("/mnt/tmp/retokenize", name="mytokens")
-	pairs = repo.remote_names()
+Samples:
+	rref = agit.WrapRepo("/mnt/tmp/retokenize", name="mytokens")
+	pairs = rref.remote_names()
+
+See also:
+	../../gitsamples/use_agit.py
 """
 
 # pylint: disable=missing-function-docstring
