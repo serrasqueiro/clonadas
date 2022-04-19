@@ -92,6 +92,18 @@ class ZObject():
             return "", []
         return key, matched[0][1]
 
+    def get_key_hint(self, name:str) -> tuple:
+        """ Returns triplet, instead of pair (get_one_key).
+		1. the complete table string
+		2. the content of the table
+		3. the hint associated with TABLE=<EXPR>
+        """
+        key, matched = self.get_one_key(name)
+        if key and matched and key in self._table:
+            hint = key.split("=", maxsplit=1)[-1]
+            return key, matched, hint
+        return key, matched, None
+
     def dumps(self, data, key:str="data") -> str:
         """ Dumps JSON object """
         content = data if isinstance(data, dict) else self._data_key(data, key)
