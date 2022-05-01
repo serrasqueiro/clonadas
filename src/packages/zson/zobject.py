@@ -8,6 +8,12 @@
 
 import json
 
+DEFAULT_ENCODING = "ISO-8859-1"
+ENCODING_AKAS = {
+    "a": "ascii",
+    "latin-1": "ISO-8859-1",
+}
+
 
 class ZObject():
     """ JSON related operations
@@ -17,13 +23,20 @@ class ZObject():
     _msg = ""
 
     def __init__(self, info, encoding:str):
+        """ Initialize object.
+        encoding alias are defined at ENCODING_AKAS.
+        """
         assert isinstance(encoding, str)
+        if ENCODING_AKAS.get(encoding):
+            enc = ENCODING_AKAS[encoding]
+        else:
+            enc = encoding if encoding else DEFAULT_ENCODING
         self._table = [] if info is None else info
-        self._encoding, self._force_ascii = encoding, True
+        self._encoding, self._force_ascii = enc, True
         self._do_sort = True
         self._msg = ""
 
-    def encoding(self) -> str:
+    def get_encoding(self) -> str:
         """ Returns input/ output encoding """
         assert self._encoding
         return self._encoding

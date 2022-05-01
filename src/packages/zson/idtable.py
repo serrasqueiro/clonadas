@@ -102,6 +102,11 @@ class IdTable(ZObject):
         data = self._table[key]
         return self._index.do_index(key, data)
 
+    def all_indexes(self) -> list:
+        keys = self.keying()
+        res = [[key, self.index(key), self.get_index_for(key)] for key in keys]
+        return res
+
     def get_keys(self) -> list:
         """ Returns the list of keys. """
         return sorted(self._index.by_key, key=str.casefold)
