@@ -69,13 +69,14 @@ class ZObject():
             return None
         return self._table[name]
 
-    def get_one_key(self, name:str) -> tuple:
+    def get_one_key(self, name:str, function=None) -> tuple:
         """ If name matches exactly one key, returns it.
         If name matches multiple keys, returns None.
         If name does not match anything, returns an empty list.
         """
+        name_compare = default_name_compare if function is None else function
         res = self._table.get(name)
-        key = None
+        key, found_key = None, None
         if res is not None:
             return name, res
         matched = []
@@ -84,13 +85,15 @@ class ZObject():
         for key in self._table:
             if "=" in key and name == key.split("=", maxsplit=1)[0]:
                 return key, self._table[key]
-            if key.startswith(name):
+            if name_compare(key, name):
+                found_key = key
                 matched.append((key, self._table[key]))
         if len(matched) > 1:
             return name, None		# Multiple matches!
-        if not matched or key is None:
+        if found_key is None:
             return "", []
-        return key, matched[0][1]
+        #print("# found single match:", matched[0])
+        return found_key, matched[0][1]
 
     def get_key_hint(self, name:str) -> tuple:
         """ Returns triplet, instead of pair (get_one_key).
@@ -142,6 +145,15 @@ class ZObject():
         return {
             key: obj,
         }
+
+
+def default_name_compare(key:str, name:str) -> int:
+    """ Default name compare is startswith: returns 1 if True, 2 if exact match.
+    """
+    assert isinstance(key, str)
+    if key == name:
+        return 2
+    return int(key.startswith(name))
 
 
 # Main script
