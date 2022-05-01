@@ -1,5 +1,5 @@
 #-*- coding: utf-8 -*-
-# zobject.py  (c)2021  Henrique Moreira
+# zobject.py  (c)2021, 2022  Henrique Moreira
 
 """ Generic json-based object
 """

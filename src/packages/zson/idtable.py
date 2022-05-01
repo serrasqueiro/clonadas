@@ -101,6 +101,15 @@ class IdTable(ZObject):
         assert isinstance(idxes, dict)
         return idxes
 
+    def get_index_for(self, key) -> dict:
+        """ Returns indexes for table 'key'. """
+        idxes = self.get_indexes()
+        adict = self._table["~"][0]
+        if isinstance(key, str):
+            return idxes[key]
+        assert isinstance(adict, dict)
+        return adict
+
     def _from_data(self, data:str) -> bool:
         """ Read table from data string. """
         inp = json.loads(data)
