@@ -13,6 +13,8 @@ ENCODINGS = {
     "latin-1": "ISO-8859-1",
 }
 
+TILDE = "~"
+
 
 class CSV(ZObject):
     """ CSV-based table
@@ -125,13 +127,13 @@ class CSV(ZObject):
         """ Replaces '~' by ',' """
         if not alist:
             return []
-        return [astr.replace("~", self._split) for astr in alist]
+        return [astr.replace(TILDE, self._split) for astr in alist]
 
     def _from_row(self, alist:list) -> list:
         """ Replaces ',' by '~' """
         if not alist:
             return []
-        return [astr.replace(self._split, "~") for astr in alist]
+        return [astr.replace(self._split, TILDE) for astr in alist]
 
     def _to_csv(self) -> str:
         """ Returns the csv string for the content. """

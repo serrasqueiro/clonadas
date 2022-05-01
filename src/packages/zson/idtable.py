@@ -1,5 +1,5 @@
 #-*- coding: utf-8 -*-
-# idtable.py  (c)2021  Henrique Moreira
+# idtable.py  (c)2021, 2022  Henrique Moreira
 
 """
 json-based table
@@ -12,12 +12,15 @@ import json
 from zson.zobject import ZObject
 from zson.zindex import ZIndex
 
+TILDE_SYMBOL = "~"
+
 
 class IdTable(ZObject):
     """ JSON-based table
     """
     _table = None
     _index = None
+    _template_tilde = TILDE_SYMBOL
 
     def __init__(self, info=None, encoding="utf-8"):
         """ Initializer: 'info' should be a dictionary or a list.
@@ -32,22 +35,39 @@ class IdTable(ZObject):
         # Indexing:
         self._index = ZIndex("utf-8")
 
+    def get_template(self) -> dict:
+        """ Return the table template entry (dict)
+        """
+        if not self._table:
+            # No table (list nor dictionary),
+            #	return basic default tilde entry (dictionary).
+            return {"Id": -1, "Key": "*", "Title": ""}
+        seq = self._table[IdTable._template_tilde]
+        assert seq
+        adict = seq[0]
+        assert isinstance(adict, dict)
+        return adict
+
     def inject(self, obj):
         """ Inject a specific table to this instance. """
         self._index = ZIndex("utf-8")
         self._table = obj
 
-    def reset(self, name:str="sample") -> bool:
-        """ Generic default IdTable """
-        if name.startswith(("!", "~")):
+    def reset(self, name:str="sample", default=True) -> bool:
+        """ Generic default IdTable.
+        If 'default' is False, re-used TILDE dictionary.
+        """
+        if default:
+            self._table = []
+        if name.startswith(("!", TILDE_SYMBOL)):
             first = name[1:]
         else:
             first = "!" + name + ".json"
         head = {"Id": 0, "Key": None, "Mark": None, "Title": ""}
-        tail = {"Id": -1, "Key": "*", "Title": ""}
+        tail = self.get_template()
         self._table = {
             first: [head],
-            "~": [tail],
+            IdTable._template_tilde: [tail],
         }
         return self.index(first)
 
@@ -165,6 +185,8 @@ class IdTable(ZObject):
         return ""
 
     def _write_content(self, path:str, astr:str) -> bool:
+        """ Write content, Linux text (no CR-LF, but only LF)
+        """
         if os.name == "nt":
             with open(path, "wb") as fdout:
                 fdout.write(astr.encode(self._encoding))
