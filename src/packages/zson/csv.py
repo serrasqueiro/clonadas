@@ -1,5 +1,5 @@
 #-*- coding: utf-8 -*-
-# csv.py  (c)2021  Henrique Moreira
+# csv.py  (c)2021, 2022  Henrique Moreira
 
 """
 csv-based table
@@ -7,7 +7,7 @@ csv-based table
 
 # pylint: disable=missing-function-docstring
 
-from zson.zobject import ZObject
+from zson.zobject import ZObject, simpler_ascii
 
 ENCODINGS = {
     "latin-1": "ISO-8859-1",
@@ -16,7 +16,17 @@ ENCODINGS = {
 TILDE = "~"
 
 
-class CSV(ZObject):
+class BareTable(ZObject):
+    """ Abstract basic table. """
+    def __init__(self, info, encoding):
+        super().__init__(info, encoding)
+        self._header_string = ""
+
+    def header_string(self) -> str:
+        assert isinstance(self._header_string, str)
+        return self._header_string
+
+class CSV(BareTable):
     """ CSV-based table
     """
     _default_split = ","
@@ -24,7 +34,6 @@ class CSV(ZObject):
     def __init__(self, info=None, encoding="utf-8"):
         """ Initializer: data should be a dictionary or a list.
         """
-        self._header_string = ""
         self._split = CSV._default_split
         super().__init__(info, encoding)
         assert isinstance(self._table, (list, dict))
@@ -32,9 +41,16 @@ class CSV(ZObject):
     def header(self) -> list:
         """ Returns the header fields, as a list. """
         astr = self._header_string.lstrip("#")
+        if self._auto_head:
+            astr = simpler_ascii(astr)
         if not astr:
             return []
         return self._to_row(astr.split(self._split))
+
+    def rework_header(self, new_fields:list):
+        oldlen = len(self.header())
+        self._header_string = self._default_split.join(new_fields)
+        return oldlen == len(self.header())
 
     def convert(self, obj) -> bool:
         """ Converts from another object """

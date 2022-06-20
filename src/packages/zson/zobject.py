@@ -34,6 +34,7 @@ class ZObject():
         self._table = [] if info is None else info
         self._encoding, self._force_ascii = enc, True
         self._do_sort = True
+        self._auto_head = False
         self._msg = ""
 
     def get_encoding(self) -> str:
@@ -43,6 +44,9 @@ class ZObject():
 
     def ensure_ascii(self, force_ascii=True):
         self._force_ascii = force_ascii
+
+    def set_auto_head(self, do_auto_heading):
+        self._auto_head = do_auto_heading
 
     def message(self):
         """ Returns the (error) message """
@@ -167,6 +171,19 @@ def default_name_compare(key:str, name:str) -> int:
     if key == name:
         return 2
     return int(key.startswith(name))
+
+def simpler_ascii(astr:str) -> str:
+    """ Returns a simpler ASCII string
+    """
+    res = ""
+    for achr in astr:
+        valid = ' ' <= achr <= '~'
+        if not valid:
+            continue
+        res += achr
+    # Could use...	return unidecode.unidecode(astr)
+    # but avoiding this import!
+    return res
 
 
 # Main script

@@ -33,7 +33,7 @@ class IdTable(ZObject):
         #	i - Check also 'Id' within
         self.check_head = "n"
         # Indexing:
-        self._index = ZIndex("utf-8")
+        self._index = ZIndex()
 
     def get_template(self) -> dict:
         """ Return the table template entry (dict)
@@ -50,7 +50,7 @@ class IdTable(ZObject):
 
     def inject(self, obj):
         """ Inject a specific table to this instance. """
-        self._index = ZIndex("utf-8")
+        self._index = ZIndex()
         self._table = obj
 
     def reset(self, name:str="sample", default=True) -> bool:

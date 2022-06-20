@@ -16,7 +16,7 @@ class ZIndex(ZObject):
     """
     by_key = None
 
-    def __init__(self, encoding:str):
+    def __init__(self, encoding:str="utf-8"):
         super().__init__({"index": []}, encoding)
         self.by_key = {}
 
