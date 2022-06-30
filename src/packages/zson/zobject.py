@@ -136,7 +136,7 @@ class ZObject():
     def _dump_json_string(self, data, ensure_ascii=True) -> str:
         """ Returns JSON string from dictionary or list. """
         astr = json.dumps(data, indent=2, sort_keys=self._do_sort, ensure_ascii=ensure_ascii)
-        return astr
+        return astr + "\n"
 
     def key_names_diff(self, key1, key2) -> tuple:
         """ Returns an empty tuple if key list 1 and key list 2 match.
