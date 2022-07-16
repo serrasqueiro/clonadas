@@ -84,7 +84,6 @@ class IdTable(ZObject):
     def save(self, path:str, ensure_ascii=True) -> bool:
         """ Save content to a file, at 'path'. """
         astr = self._dump_json_string(self._table, ensure_ascii=ensure_ascii)
-        astr += "\n"
         try:
             self._write_content(path, astr)
         except FileNotFoundError:
