@@ -3,15 +3,20 @@
 
 """
 Simple converter of tumblr rss into a readable XML for lxml
+
+see also https://www.jogossantacasa.pt/web/SCRss/rssFeedCartRes -> ISO-8859-1 feed
 """
 
 # pylint: disable=missing-function-docstring, unused-argument
 
 import sys
 import os.path
+import unidecode
 from lxml import etree
 from bs4 import BeautifulSoup
 
+#ENCODING_IN = "iso-8859-1"
+ENCODING_IN = "utf-8"
 
 def main():
     """ Main script.
@@ -19,6 +24,9 @@ def main():
     code = run_main(sys.stdout, sys.stderr, sys.argv[1:])
     if code is None:
         print("""story.py [options] STORY-RSS-INPUT
+
+Options are:
+   --latin	Use Latin1 (ISO-8859-1) encoding for input.
 """)
     sys.exit(code if code else 0)
 
@@ -26,17 +34,34 @@ def main():
 def run_main(out, err, args):
     """ Main run: returns 0 on success.
     """
-    if not args:
-        return None
-    if len(args) > 1:
-        return None
+    code = run_script(out, err, args)
+    return code
+
+def run_script(out, err, args):
+    """ Main parsing """
     param = args
+    opts = {
+        "encoding": ENCODING_IN,
+    }
+    while param and param[0].startswith("-"):
+        if param[0].startswith("--latin"):
+            opts["encoding"] = "iso-8859-1"
+            del param[0]
+            continue
+        return None
+    if not param:
+        return None
+    if len(param) > 1:
+        return None
     in_file = param[0]
-    msg = handle_rss(out, err, in_file)
+    enc = opts["encoding"]
+    msg = handle_rss(out, err, in_file, enc)
+    if msg:
+        print("Error:", msg)
     return 1 if msg else 0
 
 
-def handle_rss(out, err, in_file:str, postfix:str="_soup") -> str:
+def handle_rss(out, err, in_file:str, enc:str, postfix:str="_soup") -> str:
     """ Main handler: reads 'in_file.extension' and outputs 'file_soup.extension'
     """
     out_encode = "utf-8"
@@ -51,8 +76,13 @@ def handle_rss(out, err, in_file:str, postfix:str="_soup") -> str:
     else:
         out_name = in_file
     out_name += postfix + extension
-    with open(in_file, "r", encoding="utf-8") as fdin:
-        astr, root = handle_data(out, fdin.read())
+    with open(in_file, "r", encoding=enc) as fdin:
+        inputs = fdin.read()
+        if inputs.startswith("<?xml version="):
+            inputs = inputs[inputs.index("?>") + 2:]
+        inputs = inputs.replace("\r", "")
+        print("# Head:", "\n".join(inputs.splitlines()[:5]), end="<<<!\n\n")
+        astr, root = handle_data(out, inputs)
 
     # Dump 'root' (XML)
     dump_rss_content(out, root)
@@ -86,11 +116,17 @@ def dump_rss_content(out, root) -> bool:
     print(f"# Channels, #{len(channels)}: '{channel.tag}'")
     for child in channel:
         pre = ("-" * 40 + "\n") if child.tag in ("item",) else ""
-        print(pre + "# :::", child.tag, ":::")
+        out.write(f"{pre}# ::: {child.tag} :::\n")
         for item in child:
-            print("#", item.tag, ":", item.text)
+            out.write(f"# {item.tag} : {textual(item.text)}\n")
     return True
 
+def textual(astr, as_null="(null)"):
+    if astr is None:
+        return as_null
+    assert isinstance(astr, str)
+    new = unidecode.unidecode(astr)
+    return new
 
 # Main script
 if __name__ == "__main__":
